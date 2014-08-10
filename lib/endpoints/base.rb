@@ -23,5 +23,11 @@ module Endpoints
       status 404
       "{}"
     end
+
+    private
+
+    def encode(hash)
+      MultiJson.encode(hash, pretty: params[:pretty] == 'true')
+    end
   end
 end

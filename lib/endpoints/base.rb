@@ -27,7 +27,8 @@ module Endpoints
     private
 
     def encode(hash)
-      MultiJson.encode(hash, pretty: development? || params[:pretty] == 'true')
+      MultiJson.encode hash,
+                       pretty: development? || params[:pretty] == 'true'
     end
   end
 end
